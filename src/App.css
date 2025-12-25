@@ -1,0 +1,332 @@
+/* Reset handled in App.css */
+/* Existing styles... keeping them and adding new ones */
+
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.container.full-width {
+    width: 100%;
+}
+
+.container.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.info-bar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 2rem;
+    display: flex;
+    gap: 2rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.info-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.info-value {
+    color: #2c3e50;
+    font-family: 'Consolas', monospace;
+}
+
+.badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.badge.Pre { background: #3498db; color: white; }
+.badge.Post { background: #e67e22; color: white; }
+
+/* Status Badges */
+.badge.In-Progress { background: #3498db; color: white; }
+.badge.Completed { background: #27ae60; color: white; }
+.badge.Failed { background: #c0392b; color: white; }
+
+.btn-primary {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.btn-primary:hover { background: #2ecc71; }
+.btn-primary:disabled { background: #95a5a6; cursor: not-allowed; }
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.btn-danger:hover { background: #c0392b; }
+
+.btn-success {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.btn-success:hover { background: #2ecc71; }
+
+.btn-danger.small {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.column h3 {
+    margin: 0;
+    padding: 1rem;
+    background: #ecf0f1;
+    border-bottom: 1px solid #bdc3c7;
+    font-size: 1rem;
+}
+
+.scroll-area {
+    flex: 1;
+    overflow: auto;
+    padding: 1rem;
+}
+
+.json-view {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin: 0;
+}
+
+.json-editor {
+    flex: 1;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    resize: none;
+    outline: none;
+    background: #fff;
+}
+
+.json-editor.error {
+    background: #fff0f0;
+}
+
+.error-msg {
+    color: #c0392b;
+    padding: 0.5rem 1rem;
+    background: #fadbd8;
+    font-size: 0.9rem;
+}
+
+.error-text {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+/* History Page Styles */
+.run-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.fail-reason {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #c0392b;
+    background: #fadbd8;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.run-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.run-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.split-view {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+    height: 600px;
+}
+
+.diagram-pane {
+    flex: 2;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.steps-list {
+    flex: 1;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.steps-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.steps-list li {
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+.steps-list li:hover {
+    background: #f8f9fa;
+}
+
+.history-detail-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.back-btn {
+    align-self: flex-start;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background: #95a5a6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Nav Bar */
+.nav-bar {
+    background: #34495e;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+}
+.nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+.nav-link:hover {
+    color: white;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+}
